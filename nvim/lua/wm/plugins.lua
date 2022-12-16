@@ -1,20 +1,20 @@
 -- Install packer
-local ensure_packer = function ()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 -- Initialize packer
 require('packer').init({
-  compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
+  compile_path = vim.fn.stdpath('data') .. '/site/plugin/packer_compiled.lua',
   display = {
     open_fn = function()
       return require('packer.util').float({ border = 'solid' })
@@ -41,13 +41,14 @@ use('wbthomason/packer.nvim') -- Let packer manage itself
 use('tpope/vim-commentary')
 use('tpope/vim-repeat')
 use('tpope/vim-surround')
--- use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
+use('tpope/vim-abolish')
+use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
 use('tpope/vim-unimpaired') -- Adds [b and other handy mappings
 -- use('tpope/vim-sleuth') -- Indent autodetection with editorconfig support
 use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
 use('nelstrom/vim-visual-star-search')
 use { 'posva/vim-vue' }
--- 
+--
 -- use({
 --   'tpope/vim-projectionist',
 --   requires = 'tpope/vim-dispatch',
@@ -55,42 +56,50 @@ use { 'posva/vim-vue' }
 --     require('wm.plugins.projectionist')
 --   end,
 -- })
--- 
+--
 use({
-  'jessarcher/onedark.nvim',
+  'bluz71/vim-nightfly-colors',
   config = function()
-    vim.cmd('colorscheme onedark')
-
-    -- Hide the characters in FloatBorder
-    vim.api.nvim_set_hl(0, 'FloatBorder', {
-      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
-      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
-    })
-
-    -- Make the StatusLineNonText background the same as StatusLine
-    vim.api.nvim_set_hl(0, 'StatusLineNonText', {
-      fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
-      bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
-    })
-
-    -- Hide the characters in CursorLineBg
-    vim.api.nvim_set_hl(0, 'CursorLineBg', {
-      fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
-      bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
-    })
-
-    vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
-    vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
-  end,
+    require('wm.plugins.nightfly')
+  end
 })
--- 
+
+-- use({
+--   'shaunsingh/nord.nvim',
+--   config = function()
+--     require('wm.plugins.nord')
+--   end
+-- })
+
+-- use({
+--   'marko-cerovac/material.nvim',
+--   config = function()
+--     require('wm.plugins.material')
+--   end
+-- })
+
+-- use({
+--   'EdenEast/nightfox.nvim',
+--   config = function()
+--     require('wm.plugins.nightfox')
+--   end
+-- })
+
+-- use({
+--   'projekt0n/github-nvim-theme',
+--   config = function()
+--     require('wm.plugins.github-nprojekt0n/vim-theme')
+--   end
+-- })
+
+--
 -- use({
 --   'tommcdo/vim-lion',
 --   config = function()
 --     require('wm.plugins.lion')
 --   end,
 -- })
--- 
+--
 -- use({
 --   'whatyouhide/vim-textobj-xmlattr',
 --   requires = 'kana/vim-textobj-user',
@@ -112,12 +121,12 @@ use({
   end,
 })
 
--- use({
---   'AndrewRadev/splitjoin.vim',
---   config = function()
---     require('wm.plugins.splitjoin')
---   end,
--- })
+use({
+  'AndrewRadev/splitjoin.vim',
+  config = function()
+    require('wm.plugins.splitjoin')
+  end,
+})
 
 use({
   'windwp/nvim-autopairs',
@@ -125,37 +134,37 @@ use({
     require('nvim-autopairs').setup()
   end,
 })
--- 
+
 -- use({
 --   'akinsho/bufferline.nvim',
 --   requires = 'kyazdani42/nvim-web-devicons',
---   after = 'onedark.nvim',
+--   after = 'rose-pine.nvim',
 --   config = function()
 --     require('wm.plugins.bufferline')
 --   end,
 -- })
--- 
--- use({
---   'nvim-lualine/lualine.nvim',
---   requires = 'kyazdani42/nvim-web-devicons',
---   config = function()
---     require('wm.plugins.lualine')
---   end,
--- })
--- 
+
+use({
+  'nvim-lualine/lualine.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
+  config = function()
+    require('wm.plugins.lualine')
+  end,
+})
+
 -- use({
 --   'karb94/neoscroll.nvim',
 --   config = function()
 --     require('wm.plugins.neoscroll')
 --   end,
 -- })
--- 
--- use({
---   'vim-test/vim-test',
---   config = function()
---     require('wm.plugins.vim-test')
---   end,
--- })
+
+use({
+  'vim-test/vim-test',
+  config = function()
+    require('wm.plugins.vim-test')
+  end,
+})
 
 use({
   'voldikss/vim-floaterm',
@@ -195,7 +204,7 @@ use({
 --   requires = 'tpope/vim-rhubarb',
 --   cmd = 'G',
 -- })
--- 
+--
 -- use({
 --   'kyazdani42/nvim-tree.lua',
 --   requires = 'kyazdani42/nvim-web-devicons',
@@ -219,28 +228,28 @@ use({
 })
 
 use({
-    'neovim/nvim-lspconfig',
-    requires = {
-        'b0o/schemastore.nvim',
-        'folke/lsp-colors.nvim',
-    },
-    config = function()
-        require('wm.plugins.lspconfig')
-    end,
+  'neovim/nvim-lspconfig',
+  requires = {
+    'b0o/schemastore.nvim',
+    'folke/lsp-colors.nvim',
+  },
+  config = function()
+    require('wm.plugins.lspconfig')
+  end,
 })
- 
+
 use({
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
+  'weilbith/nvim-code-action-menu',
+  cmd = 'CodeActionMenu',
 })
- 
+
 -- use({
 --   'jose-elias-alvarez/null-ls.nvim',
 --   config = function()
 --     require('wm.plugins.null-ls')
 --   end,
 -- })
--- 
+--
 -- use {
 --   'j-hui/fidget.nvim',
 --   config = function()
@@ -251,31 +260,31 @@ use({
 --     }
 --   end,
 -- }
- 
+
 use({
-    'L3MON4D3/LuaSnip',
-    config = function()
-        require('wm.plugins.luasnip')
-    end,
+  'L3MON4D3/LuaSnip',
+  config = function()
+    require('wm.plugins.luasnip')
+  end,
 })
 
- use({
-   'hrsh7th/nvim-cmp',
-   requires = {
-       'L3MON4D3/LuaSnip',
-       'hrsh7th/cmp-buffer',
-       'hrsh7th/cmp-cmdline',
-       'hrsh7th/cmp-nvim-lsp',
-       'hrsh7th/cmp-nvim-lsp-signature-help',
-       'hrsh7th/cmp-nvim-lua',
-       'jessarcher/cmp-path',
-       'onsails/lspkind-nvim',
-       'saadparwaiz1/cmp_luasnip',
-   },
-   config = function()
-     require('wm.plugins.cmp')
-   end,
- })
+use({
+  'hrsh7th/nvim-cmp',
+  requires = {
+    'L3MON4D3/LuaSnip',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-nvim-lua',
+    'jessarcher/cmp-path',
+    'onsails/lspkind-nvim',
+    'saadparwaiz1/cmp_luasnip',
+  },
+  config = function()
+    require('wm.plugins.cmp')
+  end,
+})
 
 -- use({
 --     'phpactor/phpactor',
@@ -288,14 +297,14 @@ use({
 -- })
 
 -- -- Experimental
--- 
+--
 -- use({
 --   'luukvbaal/stabilize.nvim',
 --   config = function()
 --     require('stabilize').setup()
 --   end,
 -- })
--- 
+--
 -- use({
 --   'glepnir/dashboard-nvim',
 --   config = function()
@@ -324,7 +333,7 @@ use({
 --     vim.ui.input = require('popui.input-overrider')
 --   end,
 -- })
--- 
+--
 -- use({
 --   'folke/trouble.nvim',
 --   requires = 'kyazdani42/nvim-web-devicons',
@@ -332,14 +341,14 @@ use({
 --     require('trouble').setup()
 --   end,
 -- })
--- 
+--
 -- use({
 --   'antoinemadec/FixCursorHold.nvim',
 --   config = function()
 --     vim.g.cursorhold_updatetime = 100
 --   end,
 -- })
--- 
+--
 -- Automatically install plugins on first run
 if packer_bootstrap then
   require('packer').sync()

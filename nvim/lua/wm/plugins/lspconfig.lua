@@ -1,7 +1,5 @@
 local util = require('lspconfig.util')
 
-vim.api.nvim_create_user_command('Format', 'vim.lsp.buf.formatting_seq_sync', {})
-
 vim.keymap.set('n', '<leader>ca', ':CodeActionMenu<CR>')
 vim.keymap.set('v', '<leader>ca', ':CodeActionMenu<CR>')
 vim.keymap.set('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
@@ -32,6 +30,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { buffer = bufnr })
   vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { buffer = bufnr })
   vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { buffer = bufnr })
+  vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>', { buffer = bufnr })
   -- vim.keymap.set(bufnr, 'n', '<C-K>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { buffer = bufnr })
   vim.keymap.set('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { buffer = bufnr })
   vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { buffer = bufnr })
@@ -75,6 +74,7 @@ require('lspconfig').dockerls.setup({
 require('lspconfig').emmet_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'blade' },
 })
 
 require('lspconfig').html.setup({
@@ -85,8 +85,8 @@ require('lspconfig').html.setup({
 require('lspconfig').intelephense.setup({
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.documentFormattingProvider = true
+    client.server_capabilities.documentRangeFormattingProvider = true
   end,
   capabilities = capabilities,
 })
