@@ -174,10 +174,25 @@ _G.packer_plugins = {
     path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-eunuch"] = {
+    loaded = true,
+    path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-eunuch",
+    url = "https://github.com/tpope/vim-eunuch"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-rhubarb"] = {
     loaded = true,
@@ -188,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 

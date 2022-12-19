@@ -50,12 +50,20 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  use('tpope/vim-commentary')
+  use('tpope/vim-repeat')
+  use('tpope/vim-surround')
+  use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+
+  require('onedark').setup {
+    style = 'darker'
+}
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -128,6 +136,12 @@ vim.o.completeopt = 'menuone,noselect'
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.o.clipboard = 'unnamedplus'
+vim.o.relativenumber = true
+vim.o.confirm = true
+vim.o.undofile = true
+vim.o.wildmode = 'longest:full,full'
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
