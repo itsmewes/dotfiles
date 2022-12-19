@@ -132,6 +132,15 @@ vim.g.maplocalleader = ' '
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', 'y', 'myy`y')
+vim.keymap.set('v', 'p', '"_dp')
+
+vim.keymap.set('n', '∆', ":move .+1<CR>==")
+vim.keymap.set('n', '˚', ":move .-2<CR>==")
+vim.keymap.set('v', '∆', ":move '>+1<CR>gv-gv")
+vim.keymap.set('v', '˚', ":move '<-2<CR>gv-gv")
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

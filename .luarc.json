@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.workspace.library": [
+        "/Users/wesleymartin/.config/nvim",
+        "/Users/wesleymartin/.local/share/nvim/site",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/LuaSnip",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/mason.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+        "/opt/homebrew/Cellar/neovim/HEAD-ef5ab2b/share/nvim/runtime",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after",
+        "/Users/wesleymartin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after",
+        "${3rd}/luassert/library"
+    ]
+}
