@@ -54,7 +54,16 @@ require('packer').startup(function(use)
   use('tpope/vim-repeat')
   use('tpope/vim-surround')
   use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
-
+  use('wellle/targets.vim')
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {
+        enable_check_bracket_line = false,
+        fast_wrap = {},
+        ignored_next_char = "[%w%$]"
+      }
+    end
+  }
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -63,7 +72,7 @@ require('packer').startup(function(use)
 
   require('onedark').setup {
     style = 'darker'
-}
+  }
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -142,6 +151,7 @@ vim.o.relativenumber = true
 vim.o.confirm = true
 vim.o.undofile = true
 vim.o.wildmode = 'longest:full,full'
+vim.o.cursorline = true
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -149,12 +159,19 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', 'y', 'myy`y')
-vim.keymap.set('v', 'p', '"_dp')
+vim.keymap.set('v', 'p', '"_dP')
 
 vim.keymap.set('n', '∆', ":move .+1<CR>==")
 vim.keymap.set('n', '˚', ":move .-2<CR>==")
 vim.keymap.set('v', '∆', ":move '>+1<CR>gv-gv")
 vim.keymap.set('v', '˚', ":move '<-2<CR>gv-gv")
+
+vim.o.scrolloff = 8
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -354,13 +371,14 @@ local on_attach = function(_, bufnr)
     end
   end, { desc = 'Format current buffer with LSP' })
 end
+vim.keymap.set('n', '<leader>f', ':Format<cr>')
 
 -- Setup mason so it can manage external tooling
 require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'intelephense', 'emmet_ls', 'tsserver', 'sumneko_lua', 'gopls' }
+local servers = { 'intelephense', 'emmet_ls', 'tsserver', 'sumneko_lua' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
