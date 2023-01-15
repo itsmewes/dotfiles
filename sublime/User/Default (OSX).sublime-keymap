@@ -1,0 +1,9 @@
+[
+	{ "keys": ["ctrl+shift+x"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["alt+shift+f"], "command": "lsp_format_document" },
+	{
+		"keys": ["ctrl+w"],
+		"command": "emmet_wrap_with_abbreviation",
+		"context": [{"key": "setting.is_widget",  "operand": false }]
+	},
+]

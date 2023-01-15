@@ -1,0 +1,15 @@
+let mapleader=<space>
+
+nnoremap <leader>lg :LaravelGoto<CR>
+nnoremap <leader>f :LspFormatDocument<CR>
+nnoremap <leader>a :LspCodeActions<CR>
+nnoremap <leader>rn :LspSymbolRename<CR>
+nnoremap <leader>k :LspHover<CR>
+nnoremap <leader>tc :PhpunitTestFile<CR>
+nnoremap <leader>tm :PhpunitTestNearest<CR>
+nnoremap <leader>sr :LspSymbolReferences<CR>
+nnoremap <leader>u :PhpactorImportClass<CR>
+nnoremap <leader>n :PhpactorTransform transform=fix_namespace_class_name<CR>
+nnoremap <leader>gc :GsCommit include_unstaged=true<CR>
+
+vnoremap p "_dP

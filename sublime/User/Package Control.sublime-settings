@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Emmet",
+		"FileManager",
+		"GitSavvy",
+		"Laravel Blade Highlighter",
+		"Laravel Goto",
+		"LSP",
+		"LSP-intelephense",
+		"LSP-typescript",
+		"Meetio Theme",
+		"NeoVintageous",
+		"Package Control",
+		"Phpactor",
+		"PHPUnitKit",
+		"Sass",
+		"Vue Syntax Highlight",
+	],
+}

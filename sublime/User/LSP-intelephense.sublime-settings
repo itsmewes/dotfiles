@@ -1,0 +1,28 @@
+// Settings in here override those in "LSP-json/LSP-json.sublime-settings"
+
+{
+	"initializationOptions": {
+		"clearCache": false,
+		// "storagePath": "${temp_dir}/intelephense",
+		// "globalStoragePath": "${home}/.intelephense",
+
+		// if you want to use a premium license, you can either paste the key directly
+		// or paste it into a file and provide its absolute path here
+		"licenceKey": "003R64QBEFPITRD",
+	},
+	// @see configuration in https://github.com/bmewburn/vscode-intelephense/blob/master/package.json
+	"settings": {
+		"intelephense.telemetry.enabled": false,
+		"intelephense.completion.triggerParameterHints": true,
+		"intelephense.completion.insertUseDeclaration": true,
+		"intelephense.trace.server": "messages",
+		"intelephense.diagnostics.undefinedClassConstants": false,
+		"intelephense.diagnostics.undefinedFunctions": false,
+		"intelephense.diagnostics.undefinedConstants": false,
+		"intelephense.diagnostics.undefinedProperties": false,
+		"intelephense.diagnostics.undefinedTypes": false,
+		"intelephense.diagnostics.undefinedMethods": false,
+		// There are quite a lot of settings for intelephense...
+		// For a full list, you can check the link above or just use LSP-json for autocompletion.
+	},
+}
