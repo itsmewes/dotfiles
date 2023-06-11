@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "/Users/wesleymartin/Library/Application\ Support/fnm/node-versions/v16.15.0/installation/lib/node_modules/prettier-plugin-blade/",
+    "/Users/wesleymartin/Library/Application\ Support/fnm/node-versions/v16.15.0/installation/lib/node_modules/prettier-plugin-tailwindcss/"
+  ],
+  "overrides": [
+    {
+      "files": ["*.blade.php"],
+      "options": {
+        "parser": "blade"
+      }
+    }
+  ]
+}
+
