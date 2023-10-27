@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "/Users/wesleymartin/Library/Application Support/fnm/node-versions/v16.15.0/installation/lib/node_modules/@shufo/prettier-plugin-blade/dist/index.cjs"
+  ],
+  "singleQuote": true,
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": [
+        "*.blade.php"
+      ],
+      "options": {
+        "parser": "blade",
+        "sortTailwindcssClasses": true,
+        "noPhpSyntaxCheck": true,
+        "sortHtmlAttributes": "vuejs",
+        "wrapAttributes": "force-expand-multiline"
+      }
+    }
+  ]
+}
