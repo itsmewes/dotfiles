@@ -1,0 +1,46 @@
+# The syntax is "key = value". The whitespace around the equals doesn't matter.
+window-padding-x = 14
+window-padding-y = 2
+
+background = 0E131F 
+foreground = DEDFE4 
+
+font-family = Victor Mono
+font-size = 17
+
+keybind = ctrl+z=close_surface
+keybind = super+d=new_split:right
+keybind = shift+up=jump_to_prompt:-1
+keybind = shift+down=jump_to_prompt:+1
+
+# Colors can be changed by setting the 16 colors of `palette`, which each color
+# being defined as regular and bold.
+#
+# black
+palette = 0=#1d2021
+palette = 8=#7c6f64
+# red
+palette = 1=#CF6B7E
+palette = 9=#fb4934
+# green
+palette = 2=#A2BF81
+palette = 10=#b8bb26
+# yellow
+palette = 3=#DAB969
+palette = 11=#fabd2f
+# blue
+palette = 4=#82AAFF
+palette = 12=#83a598
+# purple
+palette = 5=#AA89CF
+palette = 13=#d3869b
+# aqua
+palette = 6=#689d6a
+palette = 14=#8ec07c
+# white
+palette = 7=#a89984
+palette = 15=#fbf1c7
+
+confirm-close-surface = false
+
+cursor-style-blink = false
