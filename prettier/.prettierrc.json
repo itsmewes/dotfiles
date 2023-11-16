@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "/Users/wesleymartin/Library/Application Support/fnm/node-versions/v16.15.0/installation/lib/node_modules/@shufo/prettier-plugin-blade/dist/index.cjs"
+    "/Users/wesleymartin/Library/Application Support/fnm/node-versions/v16.15.0/installation/lib/node_modules/@shufo/prettier-plugin-blade/dist/index.cjs",
+    "/Users/wesleymartin/Code/carandclassic/laravel/node_modules/prettier-plugin-tailwindcss/dist/index.js"
   ],
   "singleQuote": true,
   "printWidth": 120,
