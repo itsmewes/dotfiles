@@ -2,14 +2,33 @@ let mapleader=<space>
 
 nnoremap <leader>lg :LaravelGoto<CR>
 nnoremap <leader>f :LspFormatDocument<CR>
-nnoremap <leader>a :LspCodeActions<CR>
+nnoremap FileType php <leader>f :!php-cs-fixer fix % --config=/Users/wesleymartin/Code/carandclassic/laravel/.php-cs-fixer.php<CR>
+nnoremap FileType vue,json <leader>f :!prettier --config /Users/wesleymartin/.config/dotfiles/prettier/.prettierrc.json --write %<CR>
 nnoremap <leader>rn :LspSymbolRename<CR>
-nnoremap <leader>k :LspHover<CR>
-nnoremap <leader>tc :PhpunitTestFile<CR>
-nnoremap <leader>tm :PhpunitTestNearest<CR>
-nnoremap <leader>sr :LspSymbolReferences<CR>
-nnoremap <leader>u :PhpactorImportClass<CR>
-nnoremap <leader>n :PhpactorTransform transform=fix_namespace_class_name<CR>
+nnoremap <leader>nf :FmCreate<CR>
+nnoremap <leader>yL ^vg_y
+vnoremap L ^og_
+nnoremap <leader>d "_dd
+vnoremap d "_d
+
 nnoremap <leader>gc :GsCommit include_unstaged=true<CR>
+nnoremap <leader>gs :GsShowStatus<CR>
+nnoremap <leader>gpr :GsGithubCreatePullRequest<CR>
+nnoremap <leader>grh :RevertHunk<CR>
+
+nnoremap <leader>ts :!rustywind --write %<CR>
+nnoremap <leader>pf :!prettier --config /Users/wesleymartin/.config/dotfiles/prettier/.prettierrc.json --write %<CR>
+nnoremap <leader>ec :!cd laravel; yarn eslint %<CR>
+nnoremap <leader>ef :!cd laravel; yarn eslint --fix %<CR>
+
+noremap <leader>vaf ?function<CR>V/{<CR>%
+nnoremap FileType go,html,js,php,vue <C-w>gd :LspSymbolDefinitionSplit<CR>
+nnoremap FileType go,html,js,php,vue gd :LspSymbolDefinition<CR>
+nnoremap [d :LspPrevDiagnostic<CR>
+nnoremap ]d :LspNextDiagnostic<CR>
+nnoremap <leader>k :LspHover<CR>
+noremap ga :LspCodeActions<CR>
+noremap gi :LspSymbolImplementation<CR>
+noremap gr :LspSymbolReferences<CR>
 
 vnoremap p "_dP

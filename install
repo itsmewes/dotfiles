@@ -3,7 +3,7 @@
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 rm -rf $HOME/.config/nvim
-ln -s $DOTFILES/nvim $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/
 
 rm -rf $HOME/.bash_aliases
 ln -s $DOTFILES/setup/.bash_aliases $HOME/.bash_aliases
@@ -14,6 +14,12 @@ ln -s $DOTFILES/setup/.inputrc $HOME/.inputrc
 rm -rf $HOME/.vimrc
 ln -s $DOTFILES/setup/.vimrc $HOME/.vimrc
 
+rm -rf $HOME/starship.toml
+ln -s $DOTFILES/setup/starship.toml $HOME/.config/
+
 rm -rf $HOME/ghostty
 ln -s $DOTFILES/ghostty $HOME/.config/
+
+rm -rf $HOME/yazi
+ln -s $DOTFILES/yazi $HOME/.config/
 

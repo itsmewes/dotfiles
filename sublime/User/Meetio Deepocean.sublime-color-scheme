@@ -1,0 +1,19 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+    "variables":
+    {
+        "background": "#0E131F",
+        "yellow": "#DAB969",
+        "green": "#A2BF81",
+        "red": "#CF6B7E",
+        "purple": "#AA89CF"
+    },
+    "globals":
+    {
+        "line_highlight": "color(var(white) alpha(0.02))",
+    },
+    "rules":
+    [
+
+    ]
+}

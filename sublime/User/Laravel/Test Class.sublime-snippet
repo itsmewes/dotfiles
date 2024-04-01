@@ -4,7 +4,7 @@
 
 declare(strict_types=1);
 
-namespace ${TM_FILEPATH/(^.*?tests)|(\/)|(\..*$)/(?1:\Tests)(?2:\\)(?3:)/g};
+namespace ${TM_FILEPATH/(^.*?tests)|(\/[a-zA-Z]*\..*$)|(\/)/(?1:\Tests)(?2:)(?3:\\)/g};
 
 use Tests\TestCase;
 use Tests\Traits\ShouldNotUseDatabase;

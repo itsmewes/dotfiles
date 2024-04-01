@@ -1,15 +1,20 @@
 {
 	"ignored_packages":
 	[
-		"Six",
 		"Vintage",
-		"Vintageous",
 	],
 	"theme": "Meetio Theme.sublime-theme",
 	"color_scheme": "Meetio Deepocean.sublime-color-scheme",
-	"neovintageous_build_version": 12700,
-	"font_face": "Victor Mono Bold",
-	"font_size": 14,
+	"neovintageous_build_version": 13200,
+	"font_face": "Victor Mono",
+	"font_size": 19,
+	"font_options": [
+        "dlig",
+        "ss01", "ss02", "ss03", "ss04", "ss05",
+        "ss06", "ss07", "ss08", "ss09", "ss10",
+        "ss11", "ss12", "ss13", "ss14", "ss15",
+        "ss16", "ss17", "ss18", "ss19", "ss20",
+	],
 	"translate_tabs_to_spaces": true,
 	"word_wrap": false,
 	"highlight_line": true,
@@ -24,6 +29,8 @@
 	"draw_white_space": ["trailing", "isolated"],
 	"trim_trailing_white_space_on_save": true,
 	"ensure_newline_at_eof_on_save": true,
-	"line_padding_top": 2,
-	"line_padding_bottom": 2,
+	"line_padding_top": 3,
+	"line_padding_bottom": 3,
+	"vintageous_use_super_keys": false,
+	"index_files": true,
 }

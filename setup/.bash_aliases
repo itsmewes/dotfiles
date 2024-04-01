@@ -1,5 +1,6 @@
 alias eba='vim ~/.bash_aliases'
 alias sba='source ~/.bash_aliases'
+alias egc='vim ~/.config/ghostty/config'
 
 alias ls='exa'
 alias ll='exa --long --header --git'
@@ -12,7 +13,64 @@ alias please='sudo $(fc -ln -1)'
 alias adb='/Users/wesleymartin/Library/Android/sdk/platform-tools/adb'
 
 # Laravel
-alias art='php artisan'
+# alias art='php artisan'
+function art(){
+    case "$PWD" in
+	*/carandclassic)
+	    bin/docker/artisan "$@"
+	    ;;
+	*)
+	    php artisan "$@"
+	    ;;
+    esac
+}
+function composer(){
+    case "$PWD" in
+	*/carandclassic)
+	    bin/docker/composer "$@"
+	    ;;
+	*)
+	    /usr/local/bin/composer "$@"
+	    ;;
+    esac
+}
+function yarn(){
+    case "$PWD" in
+	*/carandclassic)
+	    bin/car yarn "$@"
+	    ;;
+	*)
+	    "$@"
+	    ;;
+    esac
+}
+alias car='bin/car'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+# function dcu(){
+#     case "$PWD" in
+# 	*/carandclassic)
+# 	    mutagen-compose up -d
+# 	    ;;
+# 	*)
+# 	    docker-compose up -d
+# 	    ;;
+#     esac
+# }
+# function dcd(){
+#     case "$PWD" in
+# 	*/carandclassic)
+# 	    mutagen-compose down
+# 	    ;;
+# 	*)
+# 	    docker-compose down
+# 	    ;;
+#     esac
+# }
+alias drun='./bin/docker/yarn'
+alias ltf='art test --filter='
+alias lt='bin/docker/test'
+alias lts='lt --stop-on-failure'
 
 #PHP
 alias php81='$(brew --prefix php@8.1)/bin/php'
@@ -31,27 +89,29 @@ alias gbd='git branch -D'
 alias gb='git branch'
 alias g-='git checkout -'
 alias gbc='git checkout -b'
-alias gnah='git reset --hard; git clean -df;'
+# alias gnah='git reset --hard; git clean -df;'
 alias gfresh='git branch | grep -v -e "master" -e "develop" -e "staging" | xargs git branch -D'
-alias gmm='git branch --merged master | egrep -v "(^\*|master|staging)" | xargs git branch -d'
+alias gmm='git fetch --prune && git branch --merged master | egrep -v "(^\*|master|staging)" | xargs git branch -d'
 alias gcm='git checkout master'
 alias gcd='git checkout develop'
 alias gcs='git checkout staging'
-alias grb='git branch | fzf --header Merge | xargs git rebase'
-alias gmb='git branch | fzf --header Merge | xargs git merge'
-alias gch='git branch --sort=-committerdate | fzf --header Checkout | xargs git checkout'
+alias grb='git branch --sort=-committerdate | zf Merge | xargs git rebase'
+alias gmb='git branch --sort=-committerdate | zf Merge | xargs git merge'
+alias gch='git branch --sort=-committerdate --list --format="%(refname:short)" | fzf --preview="git log --oneline --max-count=50 {}" | xargs git switch'
 alias gir='git rm -r --cached . && git add .'
 alias gcbn='git branch --show-current | tr -d '\n' | pbcopy'
 alias gpull='git pull origin HEAD'
 alias gcf='git diff --name-only master..HEAD'
+gnah () {
+    git reset --hard
+    git clean -df
+    if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then
+        git rebase --abort
+    fi
+}
 function gl() {
 	days="${1:-2}"
     git log --oneline --all --author=wesley --since="$days".days.ago --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset" --abbrev-commit --date=format-local:'%Y-%m-%d %H:%M:%S'
-}
-function gpr() {
-    branch=$(git rev-parse --abbrev-ref HEAD)
-
-    open https://github.com/carandclassic/carandclassic/pull/new/"$branch"
 }
 
 # Vagrant
@@ -73,8 +133,17 @@ function mkd(){
 
 alias www="cd ~/Code"
 function ww(){
-	DIR=`find ~/Code/* -maxdepth 0 -type d -print 2> /dev/null | fzf-tmux` \
+	DIR=`find ~/Code/* -maxdepth 0 -type d -print 2> /dev/null | zf` \
 	&& cd "$DIR"
+}
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 n ()
@@ -119,15 +188,6 @@ function hrc(){
 	heroku run php artisan config:cache --remote $1;
 	heroku run php artisan route:cache --remote $1;
 	heroku run php artisan view:cache --remote $1;
-}
-
-# Docker
-function dcu(){
-	docker-compose up -d
-}
-
-function dcd(){
-	docker-compose down
 }
 
 # Optimisations
@@ -219,6 +279,7 @@ alias ytdl='youtube-dl -f "bestvideo[height<=720]+bestaudio/best[height<=720]"'
 
 # Fixes
 alias fixHomebrewPerms='sudo chown -R $(whoami) $(brew --prefix)/*'
+alias fixOpenVpn='sudo launchctl load -w /Library/LaunchDaemons/org.openvpn.client.plist'
 
 export VISUAL=vi
 

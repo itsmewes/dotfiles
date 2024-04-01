@@ -1,0 +1,4 @@
+// Settings in here override those in "Laravel Goto/LaravelGoto.sublime-settings"
+{
+    "show_hover": false,
+}
