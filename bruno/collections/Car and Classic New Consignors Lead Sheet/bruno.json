@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Car and Classic New Consignors Lead Sheet",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
