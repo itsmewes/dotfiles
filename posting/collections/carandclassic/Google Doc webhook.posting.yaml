@@ -1,0 +1,16 @@
+name: Google Doc webhook
+description: Google Doc webhook
+method: POST
+url: ${BASE_URL}/api/google-docs
+options:
+  verify_ssl: false
+body:
+  content: '{}'
+headers:
+- name: x-requested-with
+  value: ''
+- name: apikey
+  value: ''
+params:
+- name: apiKey
+  value: ''

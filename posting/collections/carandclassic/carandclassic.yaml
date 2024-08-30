@@ -1,0 +1,381 @@
+openapi: 3.0.3
+info:
+  title: Car and Classic
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: https://dev.carandclassic.com
+paths:
+  /api/dealers/company:
+    get:
+      summary: Dealer Company Info
+      description: Dealer Company Info
+      operationId: dealerCompanyInfo
+      parameters:
+        - name: company_number
+          in: query
+          schema:
+            type: string
+            example: '05599884'
+      responses:
+        '200':
+          description: ''
+  /api/unbounce:
+    post:
+      summary: Unbounce webhook
+      description: Unbounce webhook
+      operationId: unbounceWebhook
+      parameters:
+        - name: apiKey
+          in: query
+          schema:
+            type: string
+            example: 125e62a4-54ce-452e-83cb-d35c6c239e71
+        - name: x-requested-with
+          in: header
+          schema:
+            type: string
+            example: XMLHttpRequest
+        - name: apikey
+          in: header
+          schema:
+            type: string
+            example: 125e62a4-54ce-452e-83cb-d35c6c239e71
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                data_json:
+                  type: string
+                  example: >-
+                    {"are_you_a_private_or_trade_seller":["Particulier"],
+
+                    "deal_prefix_":["[LA]"],
+
+                    "vrm":[""],
+
+                    "time_submitted":["07:22 AM UTC"],
+
+                    "page_uuid":["c2cfc72e-c29e-41b4-b2e9-d0b10655bc88"],
+
+                    "Country":["France"],
+
+                    "contact_number":["0649897396"],
+
+                    "full_name":["MERCIER Alexandre"],
+
+                    "lead_source":["Les Anciennes"],
+
+                    "page_name":["Les Anciennes - Auction supply form"],
+
+                    "date_submitted":["2024-07-10"],
+
+                    "utm_content":[""],
+
+                    "utm_source":[""],
+
+                    "vehicle_description_makemodelyear":["Mini Austin 1985"],
+
+                    "utm_medium":[""],
+
+                    "price_band_index":["1"],
+
+                    "utm_campaign":[""],
+
+                    "what_price_would_you_like_to_achieve":["5,000 € - 10,000
+                    €"],
+
+                    "company_name":[""],
+
+                    "email_address":["valid.email.com@tld.com"],
+
+                    "ip_address":["244.61.189.44"],
+
+                    "page_url":["http://info.lesanciennes.com/vendez-votre-ancienne/"],
+
+                    "variant":["w"]}
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /api/google-docs:
+    post:
+      summary: Google Doc webhook
+      description: Google Doc webhook
+      operationId: googleDocWebhook
+      parameters:
+        - name: apiKey
+          in: query
+          schema:
+            type: string
+            example: 928eebec-6923-46f2-9d7b-ed936bf8fd9f
+        - name: x-requested-with
+          in: header
+          schema:
+            type: string
+            example: XMLHttpRequest
+        - name: apikey
+          in: header
+          schema:
+            type: string
+            example: 125e62a4-54ce-452e-83cb-d35c6c239e71
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Company Name:
+                  type: string
+                  example: ''
+                Contact Number:
+                  type: string
+                  example: '''07590755462'
+                Country:
+                  type: string
+                  example: United Kingdom
+                Currency:
+                  type: string
+                  example: ''
+                Deal Owner:
+                  type: string
+                  example: ben.brace@carandclassic.com
+                Description:
+                  type: string
+                  example: ''
+                Email address:
+                  type: string
+                  example: benbrace22@aol.co.uk
+                Full name:
+                  type: string
+                  example: Ben Brace
+                Is the customer a Private or Trade Seller?:
+                  type: string
+                  example: Private
+                Lead Source:
+                  type: string
+                  example: Returning customer
+                Location:
+                  type: string
+                  example: ''
+                Offer Code:
+                  type: string
+                  example: ''
+                Price Expectation:
+                  type: string
+                  example: £0 - £5,000
+                Select Auction Type:
+                  type: string
+                  example: Car
+                Target Market:
+                  type: string
+                  example: UK
+                Vehicle Registration Number (VRM):
+                  type: string
+                  example: ''
+                Vehicle Variant:
+                  type: string
+                  example: ''
+                Vehicle Year:
+                  type: string
+                  example: '2017'
+                Vehicle Year, Make & Model:
+                  type: string
+                  example: 2017 Ford Focus
+            examples:
+              Google Doc webhook:
+                value:
+                  Company Name: ''
+                  Contact Number: '''07590755462'
+                  Country: United Kingdom
+                  Currency: ''
+                  Deal Owner: ben.brace@carandclassic.com
+                  Description: ''
+                  Email address: benbrace22@aol.co.uk
+                  Full name: Ben Brace
+                  Is the customer a Private or Trade Seller?: Private
+                  Lead Source: Returning customer
+                  Location: ''
+                  Offer Code: ''
+                  Price Expectation: £0 - £5,000
+                  Select Auction Type: Car
+                  Target Market: UK
+                  Vehicle Registration Number (VRM): ''
+                  Vehicle Variant: ''
+                  Vehicle Year: '2017'
+                  Vehicle Year, Make & Model: 2017 Ford Focus
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /api/google-sheet:
+    post:
+      summary: Google Sheet webhook
+      description: Google Sheet webhook
+      operationId: googleSheetWebhook
+      parameters:
+        - name: apiKey
+          in: query
+          schema:
+            type: string
+            example: 928eebec-6923-46f2-9d7b-ed936bf8fd9f
+        - name: x-requested-with
+          in: header
+          schema:
+            type: string
+            example: XMLHttpRequest
+        - name: apikey
+          in: header
+          schema:
+            type: string
+            example: 125e62a4-54ce-452e-83cb-d35c6c239e71
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Colour:
+                  type: string
+                  example: Brown
+                Consingor Email:
+                  type: string
+                  example: ben.brace@carandclassic.com
+                Country:
+                  type: string
+                  example: Italy
+                Currency:
+                  type: string
+                  example: EUR
+                Customer Email:
+                  type: string
+                  example: wesley.martin@brace.com
+                Customer Full Name:
+                  type: string
+                  example: Wesley Martin
+                Customer Phone Number:
+                  type: string
+                  example: '12345678'
+                Deal Type:
+                  type: string
+                  example: Trade Seller (INT/EUR)
+                Engine Size:
+                  type: string
+                  example: '4500'
+                Fuel Type:
+                  type: string
+                  example: Petrol
+                Gears:
+                  type: number
+                  example: 4
+                HPI:
+                  type: string
+                  example: Exported
+                MOT (Or international equivalent):
+                  type: string
+                  example: 'Yes'
+                MOT Expiry Date:
+                  type: number
+                  example: 2200897
+                Make:
+                  type: string
+                  example: Ferrari
+                Model:
+                  type: number
+                  example: 360
+                Odometer Unit:
+                  type: string
+                  example: KM
+                Odometer Value:
+                  type: string
+                  example: '1200'
+                P&E Preferences:
+                  type: string
+                  example: Photos ONLY
+                Price Expectation:
+                  type: number
+                  example: 50000
+                RHD or LHD?:
+                  type: string
+                  example: RHD
+                Region:
+                  type: string
+                  example: Milan
+                Service History (Full, part or none):
+                  type: string
+                  example: Part
+                Source of Lead:
+                  type: string
+                  example: Auctions - SSF White Glove Call
+                Streamlit Median:
+                  type: number
+                  example: 45000
+                Town:
+                  type: string
+                  example: Milano
+                Transmission Type:
+                  type: string
+                  example: Manual
+                VRN:
+                  nullable: true
+                  example: null
+                Why are you selling? History? How long owned for?:
+                  type: string
+                  example: Because im loaded and want a Bugatti
+                Year:
+                  type: number
+                  example: 2010
+                apiKey:
+                  type: string
+                  example: 928eebec-6923-46f2-9d7b-ed936bf8fd9f
+            examples:
+              Google Sheet webhook:
+                value:
+                  Colour: Brown
+                  Consingor Email: ben.brace@carandclassic.com
+                  Country: Italy
+                  Currency: EUR
+                  Customer Email: wesley.martin@brace.com
+                  Customer Full Name: Wesley Martin
+                  Customer Phone Number: '12345678'
+                  Deal Type: Trade Seller (INT/EUR)
+                  Engine Size: '4500'
+                  Fuel Type: Petrol
+                  Gears: 4
+                  HPI: Exported
+                  MOT (Or international equivalent): 'Yes'
+                  MOT Expiry Date: 2200897
+                  Make: Ferrari
+                  Model: 360
+                  Odometer Unit: KM
+                  Odometer Value: '1200'
+                  P&E Preferences: Photos ONLY
+                  Price Expectation: 50000
+                  RHD or LHD?: RHD
+                  Region: Milan
+                  Service History (Full, part or none): Part
+                  Source of Lead: Auctions - SSF White Glove Call
+                  Streamlit Median: 45000
+                  Town: Milano
+                  Transmission Type: Manual
+                  VRN: null
+                  Why are you selling? History? How long owned for?: Because im loaded and want a Bugatti
+                  Year: 2010
+                  apiKey: 928eebec-6923-46f2-9d7b-ed936bf8fd9f
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: X-Authorization
+      in: header
+tags: []
+

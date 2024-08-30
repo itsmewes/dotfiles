@@ -1,0 +1,8 @@
+name: Dealer Company Info
+description: Dealer Company Info
+url: ${BASE_URL}/api/dealers/company
+options:
+  verify_ssl: false
+params:
+- name: company_number
+  value: ''

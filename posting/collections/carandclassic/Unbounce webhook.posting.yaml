@@ -1,0 +1,14 @@
+name: Unbounce webhook
+description: Unbounce webhook
+method: POST
+url: ${BASE_URL}/api/unbounce
+options:
+  verify_ssl: false
+headers:
+- name: x-requested-with
+  value: ''
+- name: apikey
+  value: ''
+params:
+- name: apiKey
+  value: ''
