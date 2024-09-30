@@ -38,7 +38,7 @@ brew "php@8.0"
 brew "php@8.1"
 brew "pipx"
 brew "poppler"
-brew "postgresql@14", restart_service: true
+brew "postgresql@14"
 brew "rust"
 brew "starship"
 brew "svgo"
