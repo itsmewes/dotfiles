@@ -1,0 +1,26 @@
+{
+	"name": "Vimium C",
+	"@time": "2024/10/09, 08:39:40",
+	"time": 1728455980061,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "mac",
+		"firefox": 131
+	},
+	"exclusionRules": [
+		{
+			"pattern": ":https://mail.google.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": ":https://www.youtube.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": ":https://app.slack.com/",
+			"passKeys": ""
+		}
+	],
+	"keyLayout": 2,
+	"vimSync": true
+}
