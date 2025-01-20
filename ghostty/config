@@ -6,7 +6,7 @@ macos-titlebar-style = tabs
 
 shell-integration = bash
 
-font-family = Cascadia Code
+font-family = Caskaydia Cove
 font-size = 20
 
 keybind = ctrl+z=close_surface
