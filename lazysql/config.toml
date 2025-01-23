@@ -1,0 +1,27 @@
+[application]
+DefaultPageSize = 300
+DisableSidebar = false
+
+[[database]]
+Name = 'Car&Classic Local'
+URL = 'mysql://classifieds_user:crazy-secure-password@localhost:3306/carandclassic'
+Provider = 'mysql'
+Username = 'classifieds_user'
+Password = 'crazy-secure-password'
+Hostname = 'localhost'
+Port = '3306'
+DBName = 'carandclassic'
+URLParams = ''
+Commands = []
+
+[[database]]
+Name = 'lesAnciennes Local'
+URL = 'mysql://local:password@localhost:3307/lacom'
+Provider = 'mysql'
+Username = 'local'
+Password = 'password'
+Hostname = 'localhost'
+Port = '3307'
+DBName = 'lacom'
+URLParams = ''
+Commands = []
