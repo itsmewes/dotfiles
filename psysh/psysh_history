@@ -1,0 +1,27 @@
+URL::temporarySignedRoute('login.check', now('Africa/Johannesburg')->addMinutes(30), ['user' => '99'], false);
+exit
+URL::temporarySignedRoute('login.check', now('Africa/Johannesburg')->addMinutes(30), ['user' => '99'], false);
+now('Africa/Johannesburg');
+now('Africa/Johannesburg')->addMinute(30);
+$a = Mandate::latest()->first();
+$a->name;
+$a::class;
+$a->getKeyName();
+class_basename($a);
+$m = Mandate::find(5);
+$m->update(['signed_by_adviser_at', null]);
+$m = Mandate::find(5);
+$m->update(['signed_by_adviser_at', null]);
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);
+$m->refresh();
+$m->refresh();
+$m->update(['signed_by_adviser_at' => null]);

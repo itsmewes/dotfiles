@@ -1,7 +1,8 @@
 {
   "plugins": [
-    "/Users/wesleymartin/Code/carandclassic/laravel/node_modules/prettier-plugin-tailwindcss/dist/index.mjs",
-    "/Users/wesleymartin/.local/share/fnm/node-versions/v23.4.0/installation/lib/node_modules/@shufo/prettier-plugin-blade/dist/index.cjs"
+    "/Users/wesleymartin/.local/share/fnm/node-versions/v23.4.0/installation/lib/node_modules/@shufo/prettier-plugin-blade/dist/index.cjs",
+    "/Users/wesleymartin/Code/carandclassic/laravel/node_modules/@trivago/prettier-plugin-sort-imports/lib/src/index.js",
+    "/Users/wesleymartin/Code/carandclassic/laravel/node_modules/prettier-plugin-tailwindcss/dist/index.mjs"
   ],
   "printWidth": 120,
   "singleQuote": true,

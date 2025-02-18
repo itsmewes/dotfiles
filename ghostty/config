@@ -1,4 +1,6 @@
 # The syntax is "key = value". The whitespace around the equals doesn't matter.
+window-height = 38
+window-width = 123
 window-padding-x = 14
 window-padding-y = 2
 
@@ -42,4 +44,3 @@ palette =15=#ececfd
 confirm-close-surface = false
 
 cursor-style-blink = false
-
