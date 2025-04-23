@@ -25,3 +25,20 @@ $m->update(['signed_by_adviser_at' => null]);
 $m->refresh();
 $m->refresh();
 $m->update(['signed_by_adviser_at' => null]);
+$m = Mandate::first();
+class_basename($m);
+exit
+$m = Mandate::first();
+$m->documents;
+$m->documents()->create(['user_id' => 1, 'type' => 'fais', 'name' => 'Mandate' 'path' => 'path/to/file.pdf']);
+$m->documents()->create(['user_id' => 1, 'type' => 'fais', 'name' => 'Mandate', 'path' => 'path/to/file.pdf']);
+$faisName = 'Mandate';
+"App\Services\Fais\{$faisName}Service"
+"App\Services\Fais\ {$faisName}Service"
+"App\Services\Fais\\{$faisName}Service"
+App\Enum\Financials\Income::cases();
+(array) App\Enum\Financials\Income::cases();
+(array) App\Enum\Financials\Income::toArray();
+(array) App\Enum\Financials\Income::toArray();
+array_column(App\Enum\Financials\Income::cases(), 'name', 'value');
+exit

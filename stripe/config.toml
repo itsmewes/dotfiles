@@ -1,0 +1,13 @@
+color = ''
+project-name = 'default'
+
+[default]
+account_id = 'acct_1JzyvZDxpq6USAIZ'
+device_name = 'Wesleys-MacBook-Pro.local'
+display_name = 'Car & Classic TESTING'
+live_mode_api_key = 'rk_live_***********************************************************************************************hucf'
+live_mode_key_expires_at = '2025-07-08'
+live_mode_pub_key = 'pk_live_51JzyvZDxpq6USAIZpwWvy9WLT58hyFteDPgoxBosZvRfZHgtEtGZkPSDKyw3OXREj71RD6B8GojjC8uQVb1jS15B00SzXmLqqu'
+test_mode_api_key = 'rk_test_51JzyvZDxpq6USAIZSJl1QJQpeLQkg5QEQlet0wnFXSSxZJLtzPixw0CWVhYDcOSEHcDQXwPqPlS2MfWh93uVAuzk005tyiZ7bT'
+test_mode_key_expires_at = '2025-07-08'
+test_mode_pub_key = 'pk_test_51JzyvZDxpq6USAIZWoJI7iXJeyDbtFJxWfc3SFxleXf8Y29VD0EEMEzrxd95LID8QktdgqEW1BrJ1XYtzGGRznZY00faS83ScX'

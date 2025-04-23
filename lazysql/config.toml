@@ -37,3 +37,16 @@ Port = '5432'
 DBName = 'ridgetop'
 URLParams = ''
 Commands = []
+
+[[database]]
+Name = 'Equestrian'
+URL = 'postgres://postgres:secret@localhost:5432/ridgetopequestrian?sslmode=disable'
+Provider = 'postgres'
+Username = 'postgres'
+Password = 'secret'
+Hostname = 'localhost'
+Port = '5432'
+DBName = 'ridgetopequestrian'
+URLParams = ''
+Commands = []
+
